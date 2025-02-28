@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ugx:block/energizing_station"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "ugx:block/energizing_station_bottom",
+    "east": "ugx:block/energizing_station_side",
+    "north": "ugx:block/energizing_station_front",
+    "particle": "ugx:block/energizing_station_front",
+    "south": "ugx:block/energizing_station_front",
+    "up": "ugx:block/energizing_station_top",
+    "west": "ugx:block/energizing_station_side"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "ugx:ugx_dim_key",
+  "generator": {
+    "type": "ugx:ugx_pattern_flat",
+    "biome": {
+      "type": "minecraft:fixed",
+      "biome": "ugx:l6_biome"
+    },
+    "level": 16,
+    "pattern": [
+      [
+        {
+          "Name": "minecraft:blackstone"
+        },
+        {
+          "Name": "minecraft:obsidian"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:basalt",
+          "Properties": {
+            "axis": "y"
+          }
+        },
+        {
+          "Name": "minecraft:blackstone"
+        }
+      ]
+    ]
+  }
+}

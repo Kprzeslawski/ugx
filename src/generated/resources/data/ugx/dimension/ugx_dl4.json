@@ -1,0 +1,29 @@
+{
+  "type": "ugx:ugx_dim_key",
+  "generator": {
+    "type": "ugx:ugx_mixed_flat",
+    "biome": {
+      "type": "minecraft:fixed",
+      "biome": "ugx:l4_biome"
+    },
+    "blockProb": [
+      {
+        "key": 1.0,
+        "value": "minecraft:stone"
+      },
+      {
+        "key": 1.0,
+        "value": "minecraft:cobblestone"
+      },
+      {
+        "key": 1.0,
+        "value": "minecraft:blackstone"
+      },
+      {
+        "key": 1.0,
+        "value": "minecraft:obsidian"
+      }
+    ],
+    "level": 16
+  }
+}

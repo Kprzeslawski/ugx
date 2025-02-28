@@ -1,0 +1,66 @@
+{
+  "type": "ugx:ugx_dim_key",
+  "generator": {
+    "type": "ugx:ugx_pattern_flat",
+    "biome": {
+      "type": "minecraft:fixed",
+      "biome": "ugx:l7_biome"
+    },
+    "level": 16,
+    "pattern": [
+      [
+        {
+          "Name": "minecraft:polished_blackstone_bricks"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:deepslate_tiles"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:deepslate_bricks"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:cobbled_deepslate"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:deepslate",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:stone_bricks"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:andesite"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:clay"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:diorite"
+        }
+      ],
+      [
+        {
+          "Name": "minecraft:calcite"
+        }
+      ]
+    ]
+  }
+}
