@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.kprzeslawski.ugx.block.UGXBlocks;
 import net.kprzeslawski.ugx.entity.UGXEntities;
 import net.kprzeslawski.ugx.item.UGXCreativeTab;
+import net.kprzeslawski.ugx.villager.UGXVillagers;
 import net.kprzeslawski.ugx.world.UGXDataComponents;
 import net.kprzeslawski.ugx.item.UGXItems;
 import net.kprzeslawski.ugx.menutype.UGXMenu;
@@ -44,6 +45,7 @@ public class UGX
         UGXItems.register(modEventBus);
         UGXBlocks.register(modEventBus);
         UGXEntities.register(modEventBus);
+        UGXVillagers.register(modEventBus);
         UGXChunkGenerators.register(modEventBus);
         UGXCreativeTab.register(modEventBus);
         UGXMenu.register(modEventBus);

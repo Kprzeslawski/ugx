@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "ugx:en_station_poi",
+      "required": false
+    }
+  ]
+}
