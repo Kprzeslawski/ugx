@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.kprzeslawski.ugx.block.UGXBlocks;
 import net.kprzeslawski.ugx.entity.UGXEntities;
 import net.kprzeslawski.ugx.item.UGXCreativeTab;
+import net.kprzeslawski.ugx.menutype.teleporter.TeleportScreen;
 import net.kprzeslawski.ugx.villager.UGXVillagers;
 import net.kprzeslawski.ugx.world.UGXDataComponents;
 import net.kprzeslawski.ugx.item.UGXItems;
@@ -12,6 +13,7 @@ import net.kprzeslawski.ugx.menutype.energizestation.EnergizeStationScreen;
 import net.kprzeslawski.ugx.world.UGXAttributes;
 import net.kprzeslawski.ugx.worldgen.chunk.UGXChunkGenerators;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.entity.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -77,6 +79,7 @@ public class UGX
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             MenuScreens.register(UGXMenu.ENERGIZING_STATION_MENU.get(), EnergizeStationScreen::new);
+            MenuScreens.register(UGXMenu.TELEPORT_MENU.get(), TeleportScreen::new);
 
             EntityRenderers.register(UGXEntities.EN_ZOMBIE_L1.get(), ZombieRenderer::new);
             EntityRenderers.register(UGXEntities.EN_ZOMBIE_L2.get(), ZombieRenderer::new);
