@@ -1,5 +1,8 @@
 package net.kprzeslawski.ugx.menutype.customcomponents;
 
+import net.kprzeslawski.ugx.UGX;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -7,8 +10,8 @@ import net.minecraft.resources.ResourceLocation;
 public class UGXButton {
     int posX;
     int posY;
-    static final int sizeX = 22;
-    static final int sizeY = 22;
+    static final int sizeX = 120;
+    static final int sizeY = 20;
     boolean enabled;
     Component text;
 
@@ -20,15 +23,15 @@ public class UGXButton {
         return enabled;
     }
 
-    static final ResourceLocation BUTTON_DISABLED_SPRITE = ResourceLocation.withDefaultNamespace("container/beacon/button_disabled");
-    static final ResourceLocation BUTTON_HIGHLIGHTED_SPRITE = ResourceLocation.withDefaultNamespace("container/beacon/button_highlighted");
-    static final ResourceLocation BUTTON_SPRITE = ResourceLocation.withDefaultNamespace("container/beacon/button");
-    static final ResourceLocation CONFIRM_SPRITE = ResourceLocation.withDefaultNamespace("container/beacon/confirm");
+    static final ResourceLocation BUTTON_DISABLED_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"buttons/button_disabled");
+    static final ResourceLocation BUTTON_HIGHLIGHTED_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"buttons/button_highlighted");
+    static final ResourceLocation BUTTON_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"buttons/button");
 
-    public UGXButton(int posX, int posY, int sizeX, int sizeY, Component text) {
+    public UGXButton(int posX, int posY, Component text) {
         this.posX = posX;
         this.posY = posY;
         this.enabled = false;
+        this.text = text;
     }
 
     public boolean isOver(int ofX, int ofY,int mouseX, int mouseY){
@@ -36,7 +39,7 @@ public class UGXButton {
                 posY + ofY <= mouseY && mouseY <= posY + sizeY + ofY;
     }
 
-    public void render(GuiGraphics pGuiGraphics, int ofX, int ofY, int pMouseX, int pMouseY){
+    public void render(GuiGraphics pGuiGraphics, int ofX, int ofY, int pMouseX, int pMouseY, Font font){
         if(this.enabled){
             if(isOver(ofX,ofY,pMouseX,pMouseY))
                 pGuiGraphics.blitSprite(BUTTON_HIGHLIGHTED_SPRITE,ofX+posX,ofY+posY,sizeX,sizeY);
@@ -45,6 +48,6 @@ public class UGXButton {
         }else
             pGuiGraphics.blitSprite(BUTTON_DISABLED_SPRITE,ofX+posX,ofY+posY,sizeX,sizeY);
 
-        pGuiGraphics.blitSprite(CONFIRM_SPRITE,ofX+posX,ofY+posY,sizeX,sizeY);
+        pGuiGraphics.drawCenteredString(font,this.text,ofX+posX + 60,ofY+posY + 5, ChatFormatting.WHITE.getColor());
     }
 }

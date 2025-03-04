@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-22T19:57:14.5839504	Item Models: ugx
+// 1.21.1	2025-03-04T11:33:31.7696268	Item Models: ugx
 047d92cb95b73d0b105460116b9c5b5d7f9908bd assets/ugx/models/item/axe_1.json
 adfa4cd7cd36a18db92b0095c08ceba6fc8e3797 assets/ugx/models/item/bow_1.json
 bed5b9c070690860a5dc4c994f770e3c105ad6f6 assets/ugx/models/item/sw_1.json
@@ -46,14 +46,5 @@ fbad22b8c68e0d4da0de8e9380269c0522879294 assets/ugx/models/item/tangerine_leggin
 4b6804004629e72a6ee46f1aaaf14a19b26f43a2 assets/ugx/models/item/tangerine_leggings_netherite_trim.json
 ca47b2fac219cf500b75d9479da7dc31e7fa0fb4 assets/ugx/models/item/tangerine_leggings_quartz_trim.json
 ca3eeb1945e694c78e6fdf006fa373150ada7dab assets/ugx/models/item/tangerine_leggings_redstone_trim.json
-101c0052bfffa6e7efbad9bc09dfb6b1549d804f assets/ugx/models/item/tp_dlv10_wand.json
 c80e6b58bf4f9a1dc7f242375ccf471419df345e assets/ugx/models/item/tp_dlv1_wand.json
-f430cb611360fee711d7a60595efc0fea496539c assets/ugx/models/item/tp_dlv2_wand.json
-6a24cedcb53e8313c7d3c371c749e7526fcfe903 assets/ugx/models/item/tp_dlv3_wand.json
-559bf244d934f49ac1b54a030021d11e32ca7764 assets/ugx/models/item/tp_dlv4_wand.json
-42cc0d3ede1f7383282db48ad03f7ff6426d0473 assets/ugx/models/item/tp_dlv5_wand.json
-f292041754213aa317ab6b3a19c8d15435f71df1 assets/ugx/models/item/tp_dlv6_wand.json
-1a16cdf6f9726eb19c2054fc70888275ac6c932e assets/ugx/models/item/tp_dlv7_wand.json
-3fe0b0190d3a3d164a941d0a654d71088de4ec9a assets/ugx/models/item/tp_dlv8_wand.json
-dde617bf4be72017cd063899d3088278d8a2adf5 assets/ugx/models/item/tp_dlv9_wand.json
 23bcb2940f077caef49dd276f33ea5cefef9e978 assets/ugx/models/item/xp_holder.json

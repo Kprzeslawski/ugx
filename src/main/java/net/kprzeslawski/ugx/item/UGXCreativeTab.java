@@ -19,16 +19,7 @@ public class UGXCreativeTab {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.REDSTONE))
                     .title(Component.translatable("creative.ugx_tab"))
                     .displayItems((param,out)->{
-                        out.accept(UGXItems.TP_DLV1_WAND.get());
-                        out.accept(UGXItems.TP_DLV2_WAND.get());
-                        out.accept(UGXItems.TP_DLV3_WAND.get());
-                        out.accept(UGXItems.TP_DLV4_WAND.get());
-                        out.accept(UGXItems.TP_DLV5_WAND.get());
-                        out.accept(UGXItems.TP_DLV6_WAND.get());
-                        out.accept(UGXItems.TP_DLV7_WAND.get());
-                        out.accept(UGXItems.TP_DLV8_WAND.get());
-                        out.accept(UGXItems.TP_DLV9_WAND.get());
-                        out.accept(UGXItems.TP_DLV10_WAND.get());
+                        out.accept(UGXItems.TP_WAND.get());
 
                         out.accept(UGXItems.SW_1.get());
                         out.accept(UGXItems.AXE_1.get());

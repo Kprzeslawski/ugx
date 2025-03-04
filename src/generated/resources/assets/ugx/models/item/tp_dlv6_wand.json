@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ugx:item/tp_dlv6_wand"
-  }
-}

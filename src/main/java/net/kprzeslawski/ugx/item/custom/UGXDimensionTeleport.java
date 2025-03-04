@@ -26,11 +26,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
 public class UGXDimensionTeleport extends Item {
-    public UGXDimensionTeleport(Properties pProperties, ResourceKey<Level> target) {
+    public UGXDimensionTeleport(Properties pProperties) {
         super(pProperties);
-        this.targetDim = target;
     }
-    private final ResourceKey<Level> targetDim;
 
 
     @Override
@@ -68,6 +66,21 @@ public class UGXDimensionTeleport extends Item {
                 || levelResourceKey == UGXDimensions.UGX_DIM_L9
                 || levelResourceKey == UGXDimensions.UGX_DIM_L10
         ){
+            double x = 0, y = 0, z = 100;
+            var dest = itemstack.get(UGXDataComponents.TELEPORT_INITIAL_POSITION.get());
+            x = dest.get(0);
+            y = dest.get(1);
+            z = dest.get(2);
+
+            MinecraftServer minecraftserver = serverlevel.getServer();
+            ServerLevel portalDimension = minecraftserver.getLevel(Level.OVERWORLD);
+
+            pPlayer.changeDimension(
+                new DimensionTransition(portalDimension,
+                        new Vec3(x,y,z), new Vec3(0,0,0),
+                        pPlayer.getYRot(), pPlayer.getXRot(),
+                        DimensionTransition.DO_NOTHING)
+            );
 
         } else
             pPlayer.sendSystemMessage(Component.literal("You can only use this item in overworld and target dimension"));

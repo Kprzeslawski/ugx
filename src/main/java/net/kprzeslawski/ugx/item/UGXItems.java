@@ -20,16 +20,8 @@ public class UGXItems {
     public static DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, UGX.MOD_ID);
 
-    public static final RegistryObject<Item> TP_DLV1_WAND = wandRegister("tp_dlv1_wand", UGXDimensions.UGX_DIM_L1);
-    public static final RegistryObject<Item> TP_DLV2_WAND = wandRegister("tp_dlv2_wand", UGXDimensions.UGX_DIM_L2);
-    public static final RegistryObject<Item> TP_DLV3_WAND = wandRegister("tp_dlv3_wand", UGXDimensions.UGX_DIM_L3);
-    public static final RegistryObject<Item> TP_DLV4_WAND = wandRegister("tp_dlv4_wand", UGXDimensions.UGX_DIM_L4);
-    public static final RegistryObject<Item> TP_DLV5_WAND = wandRegister("tp_dlv5_wand", UGXDimensions.UGX_DIM_L5);
-    public static final RegistryObject<Item> TP_DLV6_WAND = wandRegister("tp_dlv6_wand", UGXDimensions.UGX_DIM_L6);
-    public static final RegistryObject<Item> TP_DLV7_WAND = wandRegister("tp_dlv7_wand", UGXDimensions.UGX_DIM_L7);
-    public static final RegistryObject<Item> TP_DLV8_WAND = wandRegister("tp_dlv8_wand", UGXDimensions.UGX_DIM_L8);
-    public static final RegistryObject<Item> TP_DLV9_WAND = wandRegister("tp_dlv9_wand", UGXDimensions.UGX_DIM_L9);
-    public static final RegistryObject<Item> TP_DLV10_WAND = wandRegister("tp_dlv10_wand", UGXDimensions.UGX_DIM_L10);
+    public static final RegistryObject<Item> TP_WAND = ITEMS.register("tp_dlv1_wand",
+            () -> new UGXDimensionTeleport(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> SW_1 = ITEMS.register("sw_1",
             () -> new UGXSword(Tiers.NETHERITE, new Item.Properties().stacksTo(1)));
@@ -52,7 +44,4 @@ public class UGXItems {
 
     public static void register(IEventBus eventBus) { ITEMS.register(eventBus); }
 
-    public static RegistryObject<Item> wandRegister(String name, ResourceKey<Level> dim){
-        return ITEMS.register(name, () -> new UGXDimensionTeleport(new Item.Properties().stacksTo(1), dim));
-    }
 }

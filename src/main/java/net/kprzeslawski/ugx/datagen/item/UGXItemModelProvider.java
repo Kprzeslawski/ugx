@@ -42,16 +42,7 @@ public class UGXItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(UGXItems.TP_DLV1_WAND);
-        simpleItem(UGXItems.TP_DLV2_WAND);
-        simpleItem(UGXItems.TP_DLV3_WAND);
-        simpleItem(UGXItems.TP_DLV4_WAND);
-        simpleItem(UGXItems.TP_DLV5_WAND);
-        simpleItem(UGXItems.TP_DLV6_WAND);
-        simpleItem(UGXItems.TP_DLV7_WAND);
-        simpleItem(UGXItems.TP_DLV8_WAND);
-        simpleItem(UGXItems.TP_DLV9_WAND);
-        simpleItem(UGXItems.TP_DLV10_WAND);
+        simpleItem(UGXItems.TP_WAND);
 
         simpleItem(UGXItems.XP_HOLDER);
 

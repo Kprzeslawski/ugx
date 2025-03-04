@@ -15,7 +15,7 @@ TODO graphics and assets
 Items :
 
 essence
-portal gem - done - TODO button menu with tp when in overworld
+portal gem
 boss 1 spawn egg (and boss entity)
 boss 2 spawn egg (and boss entity)
 temp 1
