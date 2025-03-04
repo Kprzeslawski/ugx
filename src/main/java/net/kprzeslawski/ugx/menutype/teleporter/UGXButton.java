@@ -1,4 +1,4 @@
-package net.kprzeslawski.ugx.menutype.customcomponents;
+package net.kprzeslawski.ugx.menutype.teleporter;
 
 import net.kprzeslawski.ugx.UGX;
 import net.minecraft.ChatFormatting;
@@ -23,9 +23,9 @@ public class UGXButton {
         return enabled;
     }
 
-    static final ResourceLocation BUTTON_DISABLED_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"buttons/button_disabled");
-    static final ResourceLocation BUTTON_HIGHLIGHTED_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"buttons/button_highlighted");
-    static final ResourceLocation BUTTON_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"buttons/button");
+    static final ResourceLocation BUTTON_DISABLED_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"teleport/button_disabled");
+    static final ResourceLocation BUTTON_HIGHLIGHTED_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"teleport/button_highlighted");
+    static final ResourceLocation BUTTON_SPRITE = ResourceLocation.tryBuild(UGX.MOD_ID,"teleport/button");
 
     public UGXButton(int posX, int posY, Component text) {
         this.posX = posX;

@@ -1,4 +1,4 @@
-package net.kprzeslawski.ugx.menutype.customcomponents;
+package net.kprzeslawski.ugx.menutype.energizestation;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;

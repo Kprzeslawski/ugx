@@ -2,9 +2,6 @@ package net.kprzeslawski.ugx.menutype.teleporter;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.kprzeslawski.ugx.UGX;
-import net.kprzeslawski.ugx.menutype.customcomponents.UGXButton;
-import net.kprzeslawski.ugx.menutype.customcomponents.UGXButtonBaseConfirm;
-import net.kprzeslawski.ugx.worldgen.dimension.UGXDimensions;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;

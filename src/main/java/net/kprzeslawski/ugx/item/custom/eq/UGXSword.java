@@ -18,8 +18,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class UGXSword extends SwordItem implements UGXEq {
-    public UGXSword(Tier pTier, Properties pProperties) {
+
+    public List<UGXItemLevelStats> stats;
+
+    public UGXSword(Tier pTier, Properties pProperties, List<UGXItemLevelStats> stats) {
         super(pTier, pProperties);
+        this.stats = stats;
     }
 
     @Override
@@ -66,17 +70,8 @@ public class UGXSword extends SwordItem implements UGXEq {
 
     @Override
     public UGXItemLevelStats getCurrentStats(int level) {
-        return Arrays.asList(
-                new UGXItemLevelStats(50, 90,8f,1.6f,0),
-                new UGXItemLevelStats(75, 80,8.2f,1.6f,0),
-                new UGXItemLevelStats(125, 70,8.4f,1.6f,0),
-                new UGXItemLevelStats(200, 60,8.7f,1.6f,0),
-                new UGXItemLevelStats(350, 50,9f,1.7f,0),
-                new UGXItemLevelStats(600, 40,9.4f,1.7f,0),
-                new UGXItemLevelStats(1000, 30,9.9f,1.7f,1),
-                new UGXItemLevelStats(1600, 20,10.5f,1.8f,1),
-                new UGXItemLevelStats(2500, 10,11.2f,1.9f,1),
-                new UGXItemLevelStats(0, 0,12f,2f,2)
-        ).get(level);
+        return stats.get(level);
     }
+
+
 }

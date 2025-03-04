@@ -2,9 +2,9 @@ TODO more beginner weapons
 
  - T1 = iron sword + template (1 essence) + iron block
     - 3 bonus slots
- - T2 = T1 LVL10 + template (32 essence + boss essence 1) + diamond block
+ - T2 = T1 LVL10 + template 2 + diamond block
     - 3 bonus slots 
- - T3 = T2 LVL10 + template (nether star + boss essence 2) + netherite block
+ - T3 = T2 LVL10 + template 3 + netherite block
     - 3 bonus slots
     - ability slot (RB)
 
@@ -19,8 +19,8 @@ portal gem
 boss 1 spawn egg (and boss entity)
 boss 2 spawn egg (and boss entity)
 temp 1
-temp 2
-temp 3
+temp 2 - boss 1 drop
+temp 3 - boss 2 drop
 
 Trades :
 
@@ -29,11 +29,11 @@ L1 template T1 - 1 essence
 L2 ???
 L2 ???
 L3 spawn egg boss 1 - 16 essence
-L3 template T2 - 32 essence boss essence 1
+L3 ???
 L4 ???
 L4 ???
 L5 spawn egg boss 2 - 32 essence
-L5 template T3 - nether star boss essence 2
+L5 ???
 
 
 

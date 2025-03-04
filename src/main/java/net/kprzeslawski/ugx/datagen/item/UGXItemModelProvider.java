@@ -47,6 +47,7 @@ public class UGXItemModelProvider extends ItemModelProvider {
         simpleItem(UGXItems.XP_HOLDER);
 
         handheldItem(UGXItems.SW_1);
+        handheldItem(UGXItems.SW_2);
         handheldItem(UGXItems.AXE_1);
 
         bowItem(UGXItems.BOW_1);

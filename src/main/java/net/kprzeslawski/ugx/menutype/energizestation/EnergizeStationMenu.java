@@ -14,20 +14,24 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 public class EnergizeStationMenu extends AbstractContainerMenu {
-    private final Container cont_slots = new SimpleContainer(2) {
+    private final Container cont_slots = new SimpleContainer(4) {
         @Override
         public void setChanged() {
             super.setChanged();
         }
     };
+    public int displayType;
+
     private final ContainerLevelAccess access;
     public EnergizeStationMenu(int pContainerId, Inventory pPlayerInventory) {
         this(pContainerId, pPlayerInventory, ContainerLevelAccess.NULL);
     }
+
     public EnergizeStationMenu(int pContainerId, Inventory pPlayerInventory, ContainerLevelAccess pAccess) {
         super(UGXMenu.ENERGIZING_STATION_MENU.get(), pContainerId);
         this.access = pAccess;
-        this.addSlot(new Slot(this.cont_slots, 0, 12, 22) {
+        this.displayType = 0;
+        this.addSlot(new Slot(this.cont_slots, 0, 173, 199) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
                 return itemStack.getItem() instanceof UGXEq;
@@ -36,23 +40,50 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
             public int getMaxStackSize() {
                 return 1;
             }
+
         });
-        this.addSlot(new Slot(this.cont_slots, 1, 12, 44) {
+        this.addSlot(new Slot(this.cont_slots, 1, 7, 150) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
-                return itemStack.is(Items.REDSTONE);
+                return itemStack.is(Items.REDSTONE) && displayType == 1;
             }
 
+            @Override
+            public boolean isActive() {
+                return displayType == 1;
+            }
+        });
+        this.addSlot(new Slot(this.cont_slots, 2, 25, 150) {
+            @Override
+            public boolean mayPlace(ItemStack itemStack) {
+                return itemStack.is(Items.REDSTONE) && displayType == 1;
+            }
+
+            @Override
+            public boolean isActive() {
+                return displayType == 1;
+            }
+        });
+        this.addSlot(new Slot(this.cont_slots, 3, 7, 150) {
+            @Override
+            public boolean mayPlace(ItemStack itemStack) {
+                return itemStack.is(Items.REDSTONE) && displayType == 2;
+            }
+
+            @Override
+            public boolean isActive() {
+                return displayType == 2;
+            }
         });
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                this.addSlot(new Slot(pPlayerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                this.addSlot(new Slot(pPlayerInventory, j + i * 9 + 9, 7 + j * 18, 174 + i * 18));
             }
         }
 
         for (int k = 0; k < 9; k++) {
-            this.addSlot(new Slot(pPlayerInventory, k, 8 + k * 18, 142));
+            this.addSlot(new Slot(pPlayerInventory, k, 7 + k * 18, 232));
         }
     }
 
@@ -65,7 +96,7 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
         }
 
         ItemStack itemstack = this.slots.get(0).getItem();
-        ItemStack itemstack1 = this.slots.get(1).getItem();
+        ItemStack itemstack1 = this.slots.get(3).getItem();
 
         if(itemstack.isEmpty())
             return false;
@@ -88,7 +119,7 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
                     UGXEqStats.upgradeItem(itemstack);
             });
 
-        } else if (pId == 1) {
+        } else if (pId == 2) {
             if(itemstack1.isEmpty())
                 return false;
 
@@ -107,12 +138,20 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
         if (slot != null && slot.hasItem()) {
             ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
-            if (pIndex == 0 || pIndex == 1) {
-                if (!this.moveItemStackTo(itemstack1, 2, 38, true)) {
+            if (pIndex == 0 || pIndex == 1 || pIndex == 2 || pIndex == 3) {
+                if (!this.moveItemStackTo(itemstack1, 4, 40, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.slots.get(1).mayPlace(itemstack1)) {
+            } else if (this.slots.get(1).mayPlace(itemstack1) && this.slots.get(1).isActive()) {
                 if (!this.moveItemStackTo(itemstack1, 1, 2, true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (this.slots.get(2).mayPlace(itemstack1) && this.slots.get(2).isActive()) {
+                if (!this.moveItemStackTo(itemstack1, 2, 3, true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (this.slots.get(3).mayPlace(itemstack1) && this.slots.get(3).isActive()) {
+                if (!this.moveItemStackTo(itemstack1, 3, 4, true)) {
                     return ItemStack.EMPTY;
                 }
             } else {
@@ -147,6 +186,8 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
 
         this.clearContainer(pPlayer, this.slots.get(0).container);
         this.clearContainer(pPlayer, this.slots.get(1).container);
+        this.clearContainer(pPlayer, this.slots.get(2).container);
+        this.clearContainer(pPlayer, this.slots.get(3).container);
     }
 
     @Override

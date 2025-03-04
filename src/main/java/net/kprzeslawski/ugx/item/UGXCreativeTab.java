@@ -22,6 +22,7 @@ public class UGXCreativeTab {
                         out.accept(UGXItems.TP_WAND.get());
 
                         out.accept(UGXItems.SW_1.get());
+                        out.accept(UGXItems.SW_2.get());
                         out.accept(UGXItems.AXE_1.get());
                         out.accept(UGXItems.BOW_1.get());
 
