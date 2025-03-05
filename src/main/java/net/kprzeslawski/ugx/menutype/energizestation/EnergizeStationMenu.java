@@ -5,12 +5,14 @@ import net.kprzeslawski.ugx.item.UGXItems;
 import net.kprzeslawski.ugx.item.custom.eq.helpers.UGXEq;
 import net.kprzeslawski.ugx.item.custom.eq.helpers.UGXEqStats;
 import net.kprzeslawski.ugx.menutype.UGXMenu;
+import net.kprzeslawski.ugx.world.UGXDataComponents;
 import net.minecraft.Util;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
@@ -123,6 +125,32 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
                 if(stats.roll())
                     UGXEqStats.upgradeItem(itemstack);
             });
+
+        } else if (pId == 1) {
+            ItemStack itemstack_t = this.slots.get(1).getItem();
+            ItemStack itemstack_m = this.slots.get(2).getItem();
+
+            if(itemstack_t.isEmpty() || itemstack_m.isEmpty())
+                return false;
+            int ct = ((UGXEq)this.getSlot(0).getItem().getItem()).getTierLv();
+            Item item1 = Items.AIR, item2 = Items.AIR;
+            switch (ct){
+                case 0 -> {item1 = UGXItems.TIER_UPGRADE_TEMPLATE_2.get(); item2 = Items.DIAMOND_BLOCK;}
+                case 1 -> {item1 = UGXItems.TIER_UPGRADE_TEMPLATE_3.get(); item2 = Items.NETHERITE_BLOCK;}
+                default -> {
+                    return false;
+                }
+            }
+            boolean flag1 = this.getSlot(0).getItem().get(UGXDataComponents.EQ_LV.get()) == 9;
+            boolean flag2 = this.getSlot(1).getItem().is(item1);
+            boolean flag3 = this.getSlot(2).getItem().is(item2);
+
+            if(flag1 && flag2 && flag3){
+                ItemStack di = ((UGXEq)itemstack.getItem()).getNextTierItem().getDefaultInstance();
+                di.set(UGXDataComponents.BONUSES.get(),itemstack.get(UGXDataComponents.BONUSES.get()));
+
+                //todo swap
+            }
 
         } else if (pId == 2) {
             if(itemstack1.isEmpty())
