@@ -2,6 +2,8 @@ package net.kprzeslawski.ugx.menutype.energizestation;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.kprzeslawski.ugx.UGX;
+import net.kprzeslawski.ugx.item.UGXItems;
+import net.kprzeslawski.ugx.item.custom.eq.helpers.UGXEq;
 import net.kprzeslawski.ugx.item.custom.eq.helpers.UGXEqStats;
 import net.kprzeslawski.ugx.world.UGXDataComponents;
 import net.minecraft.ChatFormatting;
@@ -12,6 +14,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -120,7 +124,34 @@ public class EnergizeStationScreen extends AbstractContainerScreen<EnergizeStati
             case 1 -> {
                 guiGraphics.blitSprite(EMPTY_SLOT,7+x,150+y,18,18);
                 guiGraphics.blitSprite(EMPTY_SLOT,25+x,150+y,18,18);
+                CONFIRM_BUTTON.setEnabled(false);
 
+                guiGraphics.drawString(this.font, "UPGRADE TO NEXT TIER", x + 40, y + 10, ChatFormatting.BLUE.getColor(),false);
+
+                int ct = ((UGXEq)this.menu.getSlot(0).getItem().getItem()).getTierLv();
+                if(ct == 2)
+                {
+                    guiGraphics.drawString(this.font, "ITEM AT MAXIMUM TIER", x + 40, y + 20, ChatFormatting.BLUE.getColor(),false);
+                    break;
+                }
+
+                guiGraphics.drawString(this.font, "REQUIRED:", x + 40, y + 20, ChatFormatting.BLUE.getColor(),false);
+                boolean flag1 = this.menu.getSlot(0).getItem().get(UGXDataComponents.EQ_LV.get()) == 9;
+                guiGraphics.drawString(this.font, "EQ LVL 10", x + 40, y + 30, flag1 ?  ChatFormatting.GREEN.getColor() : ChatFormatting.RED.getColor(),false);
+
+                Item item1 = Items.AIR, item2 = Items.AIR;
+                switch (ct){
+                    case 0 -> {item1 = UGXItems.TIER_UPGRADE_TEMPLATE_2.get(); item2 = Items.DIAMOND_BLOCK;}
+                    case 1 -> {item1 = UGXItems.TIER_UPGRADE_TEMPLATE_3.get(); item2 = Items.NETHERITE_BLOCK;}
+                }
+
+                boolean flag2 = this.menu.getSlot(1).getItem().is(item1);
+                boolean flag3 = this.menu.getSlot(2).getItem().is(item2);
+                guiGraphics.drawString(this.font, "TEMPLATE: " + item1.getDescription(), x + 40, y + 40, flag2 ?  ChatFormatting.GREEN.getColor() : ChatFormatting.RED.getColor(),false);
+                guiGraphics.drawString(this.font, "EQ LVL 10" + item2.getDescription(), x + 40, y + 50, flag3 ?  ChatFormatting.GREEN.getColor() : ChatFormatting.RED.getColor(),false);
+
+                if(flag1 && flag2 && flag3)
+                    CONFIRM_BUTTON.setEnabled(true);
 
             }
             case 2 -> {

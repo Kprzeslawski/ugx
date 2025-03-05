@@ -8,10 +8,7 @@ import net.kprzeslawski.ugx.item.custom.eq.UGXBow;
 import net.kprzeslawski.ugx.item.custom.eq.UGXSword;
 import net.kprzeslawski.ugx.item.custom.UGXDimensionTeleport;
 import net.kprzeslawski.ugx.item.custom.eq.helpers.UGXItemLevelStats;
-import net.kprzeslawski.ugx.worldgen.dimension.UGXDimensions;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,11 +20,17 @@ public class UGXItems {
     public static DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, UGX.MOD_ID);
 
-    public static final RegistryObject<Item> TP_WAND = ITEMS.register("tp_dlv1_wand",
+    public static final RegistryObject<Item> TP_WAND = ITEMS.register("tp_wand",
             () -> new UGXDimensionTeleport(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> XP_HOLDER = ITEMS.register("xp_holder",
             () -> new UGXXPHolder(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> ENERGY_SHARD = ITEMS.register("energy_shard", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TIER_UPGRADE_TEMPLATE_1 = ITEMS.register("tier_upgrade_template_1", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TIER_UPGRADE_TEMPLATE_2 = ITEMS.register("tier_upgrade_template_2", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TIER_UPGRADE_TEMPLATE_3 = ITEMS.register("tier_upgrade_template_3", () -> new Item(new Item.Properties()));
 
 
     //region EQ

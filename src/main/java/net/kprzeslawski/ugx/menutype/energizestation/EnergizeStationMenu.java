@@ -1,6 +1,7 @@
 package net.kprzeslawski.ugx.menutype.energizestation;
 
 import net.kprzeslawski.ugx.block.UGXBlocks;
+import net.kprzeslawski.ugx.item.UGXItems;
 import net.kprzeslawski.ugx.item.custom.eq.helpers.UGXEq;
 import net.kprzeslawski.ugx.item.custom.eq.helpers.UGXEqStats;
 import net.kprzeslawski.ugx.menutype.UGXMenu;
@@ -45,7 +46,9 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(this.cont_slots, 1, 7, 150) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
-                return itemStack.is(Items.REDSTONE) && displayType == 1;
+                return (itemStack.is(UGXItems.TIER_UPGRADE_TEMPLATE_2.get()) ||
+                        itemStack.is(UGXItems.TIER_UPGRADE_TEMPLATE_3.get()))
+                        && displayType == 1;
             }
 
             @Override
@@ -56,7 +59,9 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(this.cont_slots, 2, 25, 150) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
-                return itemStack.is(Items.REDSTONE) && displayType == 1;
+                return (itemStack.is(Items.DIAMOND_BLOCK) ||
+                        itemStack.is(Items.NETHERITE_BLOCK))
+                        && displayType == 1;
             }
 
             @Override
@@ -67,7 +72,7 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(this.cont_slots, 3, 7, 150) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
-                return itemStack.is(Items.REDSTONE) && displayType == 2;
+                return itemStack.is(UGXItems.ENERGY_SHARD.get()) && displayType == 2;
             }
 
             @Override
