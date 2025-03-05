@@ -7,10 +7,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.Arrays;
@@ -25,8 +22,16 @@ public class UGXArmor extends ArmorItem implements UGXEq{
         p_266744_.put(ArmorItem.Type.CHESTPLATE, UUID.fromString("9F3D476D-C118-4544-8365-64846904B48E"));
         p_266744_.put(ArmorItem.Type.HELMET, UUID.fromString("2AD3F246-FEE1-4E67-B886-69FD380BB150"));
     });
-    public UGXArmor(Holder<ArmorMaterial> pMaterial, Type pType, Properties pProperties) {
+
+    public List<UGXItemLevelStats> stats;
+    public Item next;
+    public int tierLv;
+
+    public UGXArmor(Holder<ArmorMaterial> pMaterial, Type pType, Properties pProperties, Item next, int tierLv, List<UGXItemLevelStats> stats) {
         super(pMaterial, pType, pProperties);
+        this.stats = stats;
+        this.next = next;
+        this.tierLv = tierLv;
     }
 
     @Override
@@ -57,17 +62,16 @@ public class UGXArmor extends ArmorItem implements UGXEq{
 
     @Override
     public UGXItemLevelStats getCurrentStats(int level) {
-        return Arrays.asList(
-                new UGXItemLevelStats(50, 90,0,9f, 3f, 1f),
-                new UGXItemLevelStats(75, 80,0,9.2f, 3f, 1f),
-                new UGXItemLevelStats(125, 70,0,9.4f, 3f, 1f),
-                new UGXItemLevelStats(200, 60,1,9.6f, 3f, 1f),
-                new UGXItemLevelStats(350, 50,1,9.8f, 3.5f, 1f),
-                new UGXItemLevelStats(600, 40,2,10f, 3.5f, 1f),
-                new UGXItemLevelStats(1000, 30,2,10.3f, 3.5f, 2f),
-                new UGXItemLevelStats(1600, 20,3,10.6f, 3.5f, 2f),
-                new UGXItemLevelStats(2500, 10,3,11f, 3.5f, 2f),
-                new UGXItemLevelStats(0, 0,4,12f, 4f, 2f)
-        ).get(level);
+        return stats.get(level);
+    }
+
+    @Override
+    public Item getNextTierItem() {
+        return next;
+    }
+
+    @Override
+    public int getTierLv(){
+        return tierLv;
     }
 }

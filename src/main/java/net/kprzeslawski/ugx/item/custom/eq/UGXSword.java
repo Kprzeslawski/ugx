@@ -8,10 +8,8 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.Arrays;
@@ -20,10 +18,14 @@ import java.util.List;
 public class UGXSword extends SwordItem implements UGXEq {
 
     public List<UGXItemLevelStats> stats;
+    public Item next;
+    public int tierLv;
 
-    public UGXSword(Tier pTier, Properties pProperties, List<UGXItemLevelStats> stats) {
+    public UGXSword(Tier pTier, Properties pProperties, Item next, int tierLv, List<UGXItemLevelStats> stats) {
         super(pTier, pProperties);
         this.stats = stats;
+        this.next = next;
+        this.tierLv = tierLv;
     }
 
     @Override
@@ -73,5 +75,13 @@ public class UGXSword extends SwordItem implements UGXEq {
         return stats.get(level);
     }
 
+    @Override
+    public Item getNextTierItem() {
+        return next;
+    }
 
+    @Override
+    public int getTierLv(){
+        return tierLv;
+    }
 }
