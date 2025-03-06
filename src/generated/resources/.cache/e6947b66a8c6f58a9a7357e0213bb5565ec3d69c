@@ -1,8 +1,12 @@
-// 1.21.1	2025-03-04T14:02:22.7482593	Item Models: ugx
+// 1.21.1	2025-03-06T10:51:21.2051715	Item Models: ugx
 047d92cb95b73d0b105460116b9c5b5d7f9908bd assets/ugx/models/item/axe_1.json
+f5b7507198bb2fc74e194d9ea425ac46af3a3c7b assets/ugx/models/item/axe_2.json
+d35accb340b0ac17990b887bafc4f100bde37470 assets/ugx/models/item/axe_3.json
 adfa4cd7cd36a18db92b0095c08ceba6fc8e3797 assets/ugx/models/item/bow_1.json
+3a9c5513bc1e87e1938846d29d6a989191cf571c assets/ugx/models/item/energy_shard.json
 bed5b9c070690860a5dc4c994f770e3c105ad6f6 assets/ugx/models/item/sw_1.json
 58d53b947e697d68e72e3ca66fd003171372ddf6 assets/ugx/models/item/sw_2.json
+679cd298818dc57817e0e1f64168cd7f5931d983 assets/ugx/models/item/sw_3.json
 4324b0c6d48121bc754aa2580052a15b2d1024b2 assets/ugx/models/item/tangerine_boots.json
 3d94010a9d39797199957232337e74429ebe1867 assets/ugx/models/item/tangerine_boots_amethyst_trim.json
 7873151d185360e19e08519b18412fe7f1f2e9d6 assets/ugx/models/item/tangerine_boots_copper_trim.json
@@ -47,5 +51,8 @@ fbad22b8c68e0d4da0de8e9380269c0522879294 assets/ugx/models/item/tangerine_leggin
 4b6804004629e72a6ee46f1aaaf14a19b26f43a2 assets/ugx/models/item/tangerine_leggings_netherite_trim.json
 ca47b2fac219cf500b75d9479da7dc31e7fa0fb4 assets/ugx/models/item/tangerine_leggings_quartz_trim.json
 ca3eeb1945e694c78e6fdf006fa373150ada7dab assets/ugx/models/item/tangerine_leggings_redstone_trim.json
-c80e6b58bf4f9a1dc7f242375ccf471419df345e assets/ugx/models/item/tp_dlv1_wand.json
+254c3ddd23d68b5d9ab90fa519cb928225f1eda1 assets/ugx/models/item/tier_upgrade_template_1.json
+6e7924d2790bd51123b4c253889936d6ce69469a assets/ugx/models/item/tier_upgrade_template_2.json
+e069fd868fe97b3fb246f2cf77aebf6f7efc1740 assets/ugx/models/item/tier_upgrade_template_3.json
+7077c0b22fa1b8adc5db46c23ff457024dabdad1 assets/ugx/models/item/tp_wand.json
 23bcb2940f077caef49dd276f33ea5cefef9e978 assets/ugx/models/item/xp_holder.json

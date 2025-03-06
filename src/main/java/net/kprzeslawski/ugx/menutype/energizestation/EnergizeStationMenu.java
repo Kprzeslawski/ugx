@@ -62,8 +62,7 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
                 return (itemStack.is(Items.DIAMOND_BLOCK) ||
-                        itemStack.is(Items.NETHERITE_BLOCK))
-                        && displayType == 1;
+                        itemStack.is(Items.NETHERITE_BLOCK));
             }
 
             @Override
@@ -97,7 +96,7 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
 
     @Override
     public boolean clickMenuButton(Player pPlayer, int pId) {
-        if(pId < 0 || pId > 1){
+        if(pId < 0 || pId > 2){
             Util.logAndPauseIfInIde(pPlayer.getName() + " pressed invalid button id: " + pId);
             return false;
         }
@@ -146,10 +145,11 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
             boolean flag3 = this.getSlot(2).getItem().is(item2);
 
             if(flag1 && flag2 && flag3){
-                ItemStack di = ((UGXEq)itemstack.getItem()).getNextTierItem().getDefaultInstance();
-                di.set(UGXDataComponents.BONUSES.get(),itemstack.get(UGXDataComponents.BONUSES.get()));
-
-                //todo swap
+                this.access.execute((p_341512_, p_341513_) -> {
+                    ItemStack di = ((UGXEq) itemstack.getItem()).getNextTierItem().getDefaultInstance();
+                    di.set(UGXDataComponents.BONUSES.get(), itemstack.get(UGXDataComponents.BONUSES.get()));
+                    this.cont_slots.setItem(0,di);
+                });
             }
 
         } else if (pId == 2) {
@@ -171,19 +171,19 @@ public class EnergizeStationMenu extends AbstractContainerMenu {
         if (slot != null && slot.hasItem()) {
             ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
-            if (pIndex == 0 || pIndex == 1 || pIndex == 2 || pIndex == 3) {
+            if (pIndex >= 0 && pIndex <= 3) {
                 if (!this.moveItemStackTo(itemstack1, 4, 40, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.slots.get(1).mayPlace(itemstack1) && this.slots.get(1).isActive()) {
+            } else if (this.slots.get(1).mayPlace(itemstack1)) {
                 if (!this.moveItemStackTo(itemstack1, 1, 2, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.slots.get(2).mayPlace(itemstack1) && this.slots.get(2).isActive()) {
+            } else if (this.slots.get(2).mayPlace(itemstack1)) {
                 if (!this.moveItemStackTo(itemstack1, 2, 3, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.slots.get(3).mayPlace(itemstack1) && this.slots.get(3).isActive()) {
+            } else if (this.slots.get(3).mayPlace(itemstack1)) {
                 if (!this.moveItemStackTo(itemstack1, 3, 4, true)) {
                     return ItemStack.EMPTY;
                 }

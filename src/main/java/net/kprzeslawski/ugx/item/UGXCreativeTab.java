@@ -20,13 +20,20 @@ public class UGXCreativeTab {
                     .title(Component.translatable("creative.ugx_tab"))
                     .displayItems((param,out)->{
                         out.accept(UGXItems.TP_WAND.get());
+                        out.accept(UGXItems.XP_HOLDER.get());
+                        out.accept(UGXItems.ENERGY_SHARD.get());
+
+                        out.accept(UGXItems.TIER_UPGRADE_TEMPLATE_1.get());
+                        out.accept(UGXItems.TIER_UPGRADE_TEMPLATE_2.get());
+                        out.accept(UGXItems.TIER_UPGRADE_TEMPLATE_3.get());
 
                         out.accept(UGXItems.SW_1.get());
                         out.accept(UGXItems.SW_2.get());
+                        out.accept(UGXItems.SW_3.get());
                         out.accept(UGXItems.AXE_1.get());
+                        out.accept(UGXItems.AXE_2.get());
+                        out.accept(UGXItems.AXE_3.get());
                         out.accept(UGXItems.BOW_1.get());
-
-                        out.accept(UGXItems.XP_HOLDER.get());
 
                         out.accept(UGXBlocks.ENERGIZING_STATION_BLOCK.get());
 

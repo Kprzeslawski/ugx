@@ -54,8 +54,6 @@ public class EnergizeStationScreen extends AbstractContainerScreen<EnergizeStati
         int x = (this.width - this.imageWidth) / 2;
         int y = (this.height - this.imageHeight) / 2;
 
-
-
         for(int i = 0; i < BUTTONS.size(); i++)
             if(BUTTONS.get(i).isEnabled() && BUTTONS.get(i).isOver(x,y,(int) pMouseX, (int) pMouseY))
                 changeDisplayType(i);
@@ -74,12 +72,12 @@ public class EnergizeStationScreen extends AbstractContainerScreen<EnergizeStati
         if(t == this.menu.displayType)
             return;
 
-        if(this.menu.displayType == 1){
-            this.menu.quickMoveStack(this.minecraft.player,1);
-            this.menu.quickMoveStack(this.minecraft.player,2);
-        } else if (this.menu.displayType == 2){
-            this.menu.quickMoveStack(this.minecraft.player,3);
-        }
+//        if(this.menu.displayType == 1){
+//            this.menu.quickMoveStack(this.minecraft.player,1);
+//            this.menu.quickMoveStack(this.minecraft.player,2);
+//        } else if (this.menu.displayType == 2){
+//            this.menu.quickMoveStack(this.minecraft.player,3);
+//        }
 
         this.menu.displayType = t;
         CONFIRM_BUTTON.setEnabled(false);
@@ -147,8 +145,8 @@ public class EnergizeStationScreen extends AbstractContainerScreen<EnergizeStati
 
                 boolean flag2 = this.menu.getSlot(1).getItem().is(item1);
                 boolean flag3 = this.menu.getSlot(2).getItem().is(item2);
-                guiGraphics.drawString(this.font, "TEMPLATE: " + item1.getDescription(), x + 40, y + 40, flag2 ?  ChatFormatting.GREEN.getColor() : ChatFormatting.RED.getColor(),false);
-                guiGraphics.drawString(this.font, "EQ LVL 10" + item2.getDescription(), x + 40, y + 50, flag3 ?  ChatFormatting.GREEN.getColor() : ChatFormatting.RED.getColor(),false);
+                guiGraphics.drawString(this.font, "TEMPLATE: " + item1.getDescription().getString(), x + 40, y + 40, flag2 ?  ChatFormatting.GREEN.getColor() : ChatFormatting.RED.getColor(),false);
+                guiGraphics.drawString(this.font, "MATERIAL: " + item2.getDescription().getString(), x + 40, y + 50, flag3 ?  ChatFormatting.GREEN.getColor() : ChatFormatting.RED.getColor(),false);
 
                 if(flag1 && flag2 && flag3)
                     CONFIRM_BUTTON.setEnabled(true);

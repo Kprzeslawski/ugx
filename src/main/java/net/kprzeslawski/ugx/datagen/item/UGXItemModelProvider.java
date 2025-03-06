@@ -43,12 +43,20 @@ public class UGXItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(UGXItems.TP_WAND);
-
         simpleItem(UGXItems.XP_HOLDER);
+
+        simpleItem(UGXItems.ENERGY_SHARD);
+
+        simpleItem(UGXItems.TIER_UPGRADE_TEMPLATE_1);
+        simpleItem(UGXItems.TIER_UPGRADE_TEMPLATE_2);
+        simpleItem(UGXItems.TIER_UPGRADE_TEMPLATE_3);
 
         handheldItem(UGXItems.SW_1);
         handheldItem(UGXItems.SW_2);
+        handheldItem(UGXItems.SW_3);
         handheldItem(UGXItems.AXE_1);
+        handheldItem(UGXItems.AXE_2);
+        handheldItem(UGXItems.AXE_3);
 
         bowItem(UGXItems.BOW_1);
 
